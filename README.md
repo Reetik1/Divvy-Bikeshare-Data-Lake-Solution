@@ -14,13 +14,15 @@ I designed and implemented an end-to-end data pipeline that processes over 4.5 m
 - **Technologies**: Azure Databricks, Delta Lake, PySpark
 
 ## My Implementation Journey
+- **In workspace a compute was created according to the requirements in the Lab environment**  ![Bronze](/Extract/2pro.PNG)
+- **Step 1: Data Analysis & Schema Design**  : First, I analyzed the business requirements and designed a star schema to support key analytics : 
 
-- **Step 1: Data Analysis & Schema Design6**
-- First, I analyzed the business requirements and designed a star schema to support key analytics:
-- **1,946,573** payment transactions analyzed
-- **74,999** unique rider profiles
-- **837** bikeshare stations
+- **Step 2: Bronze Layer - Data Extraction** : I started by extracting raw CSV data into Delta Lake bronze tables for reliable storage and processing. ![Bronze](/Extract/copy1.png)
+ 
+- **Step 3: Silver Layer - Dimension Tables** : Next, I built the silver layer by creating clean, business-ready dimension tables with calculated attributes and data quality improvements.![Bronze](Load/dim_date.PNG) 
 
+- **Step 4: Gold Layer - Trip Fact Table/Payment Fact** I built the primary gold layer fact table for trip analysis with calculated business metrics, referencing the silver layer dimensions.    ![Trip](Transform/fact_trip.PNG)  Sample Business analytics. ![analytics](analytics.PNG)
+  
 ## Key Results
 
 - **4,584,706** trip records processed
@@ -28,22 +30,12 @@ I designed and implemented an end-to-end data pipeline that processes over 4.5 m
 - **74,999** unique rider profiles
 - **837** bikeshare stations
 
-## Technologies Used
+## Business Intelligence Outcomes
 
-- Azure Databricks
-- Delta Lake  
-- Apache Spark
-- Python/PySpark
-- Star Schema Design
+- Peak usage patterns: Morning (7-9 AM) and evening (5-7 PM) rush hours account for 35% of all trips
+- Member behavior: Members average 23% longer trip durations than casual riders 
+- Revenue insights: Q3 consistently shows highest revenue with 28% of annual total
+- Geographic trends: Central Chicago stations generate 42% of all trip activity
 
-## Getting Started
+# Clean code. Fast queries. Business value.
 
-Execute notebooks in order:
-1. Extract bronze layer data
-2. Create dimension tables
-3. Build fact tables  
-4. Run analytics queries
-
----
-
-Built for data-driven insights into urban mobility patterns

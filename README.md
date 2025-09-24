@@ -6,6 +6,8 @@ A complete data engineering solution built on Azure Databricks, transforming raw
 
 I designed and implemented an end-to-end data pipeline that processes over 4.5 million trip records and 1.9 million payment transactions, creating a star schema data warehouse optimized for business intelligence and analytics.
 
+Project data is available in csv files but not uploaded in repository 
+
 ## Architecture
  **This project follows the complete medallion architecture pattern:**
 - **Bronze Layer**: Raw data ingestion from CSV files
